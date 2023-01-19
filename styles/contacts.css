@@ -1,0 +1,476 @@
+/* body {
+  font-family: "Roboto", sans-serif;
+  font-family: "Roboto Serif", serif;
+}
+nav {
+  background-color: #6f35a5;
+}
+nav a {
+  padding-left: 10px;
+  color: white;
+}
+nav span {
+  padding-left: 10px;
+}
+nav a:hover {
+  color: white;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
+.navbar {
+  height: fit-content;
+  padding: 20px;
+  background-color: #6f35a5;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+#leftdiv {
+  /* width: fit-content; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: light;
+  font-size: xx-large;
+}
+
+#leftdiv img {
+  height: 50px;
+  width: 50px;
+  margin-right: 20px;
+  /* padding-left: 10%; */
+}
+.addbuttonn {
+  margin-right: 30px;
+  display: flex;
+  align-items: center;
+}
+.addbuttonn button {
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
+  width: fit-content;
+  background-color: #965fc9;
+  font-weight: bold;
+  border: none;
+  transition: transform ease 300ms;
+  text-align: center;
+  font-size: larger;
+}
+.addbuttonn :hover {
+  cursor: pointer;
+  transform: translate(0, -4px);
+  box-shadow: 0 8px 8px -4px #c8a0ef;
+}
+
+main {
+  margin-left: 170px;
+  margin-top: 100px;
+  padding: 20px;
+}
+aside {
+  display: flex;
+  flex-direction: column;
+  background-color: #965fc9;
+  height: 85.5vh;
+  width: fit-content;
+  font-size: large;
+  float: left;
+  z-index: 1;
+  margin-top: 90px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+aside a {
+  text-decoration: none;
+  font-size: larger;
+}
+
+.select {
+  padding: 30px;
+
+  cursor: pointer;
+}
+
+.src {
+  background-color: #6f35a5;
+}
+aside :hover {
+  background-color: #965fc9;
+  box-shadow: 0 0 8px 1px #c07dff;
+  text-decoration: none;
+}
+
+.card {
+  background-color: #f1e6ff;
+  width: 290px;
+  height: auto;
+  border-radius: 0px 25px 0px 25px;
+  box-shadow: 15px -5px 10px #dcc0f7;
+  margin: 20px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+.card img {
+  width: 100%;
+  border-radius: 0px 25px 0px 0px;
+  height: 290px;
+}
+
+.form-popup {
+  display: none;
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+  width: 300px;
+  height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type="text"],
+.form-container input[type="number"],
+.form-container input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04aa6d;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
+}
+
+.form-popupp {
+  display: none;
+  position: fixed;
+
+  top: 100px;
+  right: 20px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+
+  width: 300px;
+  height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.add {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+.add input[type="text"],
+.add input[type="number"],
+.add input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.add input[type="text"]:focus,
+.add input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+
+#addbut {
+  background-color: #04aa6d;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+.add .btn {
+  background-color: #04aa6d;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.add .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.add .btn:hover,
+.open-button:hover {
+  opacity: 1;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 75%;
+  gap: 30px;
+  margin: 30px 100px;
+}
+
+.buttons {
+  border-radius: 0px 0px 0px 25px;
+  background-color: #6f35a5;
+  width: 100%;
+  height: calc(100% / 6);
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-right: 5px;
+}
+.icon {
+  color: #fff;
+}
+.editbut {
+  background-color: #6f35a5;
+  border: none;
+  margin: 5px 15px;
+}
+.delbut {
+  background-color: #6f35a5;
+  border: none;
+  margin: 5px 15px;
+}
+
+#upprogress {
+  font-weight: bold;
+}
+
+#searchBar,
+#searchBar1 {
+  width: fit-content;
+  height: auto;
+  border-radius: 20px;
+  border: 1px solid #eaeaea;
+  padding: 5px 5px;
+  font-size: 12px;
+  margin: 10px;
+}
+
+#searchBars {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+/* 
+#addbutton {
+  color: white;
+  background-color: #6f35a5;
+  margin: 5px 15px;
+  border: none;
+}
+#addbutton:focus,
+#addbutton:active {
+  outline: none;
+} */
+
+#boxouter {
+  width: 75%;
+  white-space: nowrap;
+  overflow-x: scroll;
+  height: 83%;
+  margin: auto;
+  padding: 10px;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type="file"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type="datetime-local"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+#calbut {
+  display: inline-block;
+  background-color: #7b38d8;
+  padding: 10px;
+  width: 200px;
+  color: #ffffff;
+  text-align: center;
+  border: 4px double #cccccc;
+  border-radius: 10px;
+  font-size: 20px; /* add this line */
+  margin: 5px; /* add this line */
+}
+
+#calbut.hover {
+  background-color: #b98ff5;
+}
+/* input {
+  display: none;
+} */
+#fileInp {
+  /* border: 1px solid #ccc; */
+
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  /* background-color: #7b38d8; */
+}
+
+.progress {
+  width: 25%;
+  /* display: inline; */
+}
+
+#upbut.hover {
+  background-color: #b98ff5;
+}
+
+.uploadPercentage {
+  margin: 10px;
+}
+
+.scheform {
+  /* border: 2px solid black; */
+  width: 75%;
+  height: 250px;
+  align-items: center;
+  margin: auto;
+  padding: 10px;
+  padding-top: 25px;
+}
+.child {
+  width: 75%;
+  margin: auto;
+  padding-left: 300px;
+}
+.bar {
+  width: 75%;
+}
+.progress {
+  width: 75%;
+}
+
+#upbut {
+  top: 20%;
+  padding: 5px;
+  width: 200px;
+  margin-bottom: 10px;
+  background-color: #b98ff5;
+  color: rgb(0, 0, 0);
+  border: 2px solid #6f35a5;
+  border-radius: 40px;
+  box-shadow: 0px 0px 2px 2px #b98ff5;
+}
+
+.calform {
+  width: 30%;
+  margin: auto;
+  padding: 10px;
+}
+#calbut {
+  top: 20%;
+  padding: 5px;
+  width: 200px;
+  margin-bottom: 10px;
+  background-color: #b98ff5;
+  color: rgb(0, 0, 0);
+  border: 2px solid #6f35a5;
+  border-radius: 40px;
+  box-shadow: 0px 0px 2px 2px #b98ff5;
+}
+
+#searchdept {
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
+  width: fit-content;
+  background-color: #965fc9;
+  font-weight: bold;
+  border: none;
+  transition: transform ease 300ms;
+  text-align: center;
+  font-size: larger;
+}
+
+.searchdept :hover {
+  cursor: pointer;
+  transform: translate(0, -4px);
+  box-shadow: 0 8px 8px -4px #c8a0ef;
+}

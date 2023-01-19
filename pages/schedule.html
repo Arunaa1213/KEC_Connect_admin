@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KEC CONNECT</title>
+    <link rel="stylesheet" href="../styles/schedule.css" />
+    <script src="../src/schedule.js" type="module"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <!-- Left div -->
+      <div id="leftdiv">
+        <img src="../assets/logo.png" alt="" srcset="" />
+        <p>KEC Connect</p>
+      </div>
+      <!-- left div ends -->
+
+      <!-- right div  -->
+      <div class="right">
+        <div class="add">
+          <button class="addsch">+ ADD</button>
+        </div>
+        <div class="del">
+          <button class="delbut">- DEL</button>
+        </div>
+      </div>
+      <!-- right div ends -->
+    </nav>
+    <aside>
+      <a href="../pages/index.html"><div class="select nxt">Home</div></a>
+      <!-- <div class="select src"><a href="">Home</a></div> -->
+      <a href="../pages/contacts.html"><div class="select nxt">Contact</div></a>
+      <a href="../pages/calendar.html"
+        ><div class="select nxt">Calender</div></a
+      >
+      <a href="../pages/schedule.html"
+        ><div class="select src">Schedule</div></a
+      >
+    </aside>
+    <main>
+      <div id="boxouter">
+        <div class="boxinside"></div>
+      </div>
+      <div class="form-popupp" id="myForm1">
+        <form class="scheform">
+          <div class="child">
+            <input
+              type="file"
+              class="inputFile"
+              id="fileInp"
+              accept="image/png, image/jpeg, video/mp4"
+              multiple
+            />
+            <span class="fileText"></span>
+            <button id="upbut"><b>Upload Image</b></button>
+            <div class="bar">
+              <div class="progress"></div>
+            </div>
+            <div class="uploadPercentage">0 %</div>
+            <button type="button" class="btn" id="closeedit">
+              <b>Close</b>
+            </button>
+            <div class="imageUploaded">
+              <img alt="" class="img" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

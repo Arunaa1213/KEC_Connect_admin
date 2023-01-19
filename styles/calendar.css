@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
+.navbar {
+  height: fit-content;
+  padding: 20px;
+  background-color: #6f35a5;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  /* z-index: -1; */
+}
+#leftdiv {
+  /* width: fit-content; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: light;
+  font-size: xx-large;
+}
+
+#leftdiv img {
+  height: 50px;
+  width: 50px;
+  margin-right: 20px;
+  /* padding-left: 10%; */
+}
+.add {
+  margin-right: 30px;
+  display: flex;
+  align-items: center;
+}
+.add button {
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
+  width: fit-content;
+  background-color: #965fc9;
+  font-weight: bold;
+  border: none;
+  transition: transform ease 300ms;
+  text-align: center;
+  font-size: larger;
+}
+.add :hover {
+  cursor: pointer;
+  transform: translate(0, -4px);
+  box-shadow: 0 8px 8px -4px #c8a0ef;
+}
+main {
+  margin-left: 170px;
+  margin-top: 100px;
+
+  padding: 20px;
+  overflow-x: none;
+  /* width: 80%; */
+}
+aside {
+  display: flex;
+  flex-direction: column;
+  background-color: #965fc9;
+  height: 87.5vh;
+  width: fit-content;
+  font-size: large;
+  float: left;
+  z-index: 1;
+  margin-top: 90px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+aside a {
+  text-decoration: none;
+  font-size: larger;
+}
+
+.select {
+  padding: 30px;
+
+  cursor: pointer;
+}
+
+.src {
+  background-color: #6f35a5;
+}
+aside :hover {
+  background-color: #965fc9;
+  box-shadow: 0 0 8px 1px #c07dff;
+}
+
+.calform {
+  width: 30%;
+  margin: auto;
+  padding: 5px;
+}
+.delform {
+  width: 30%;
+  margin: auto;
+  padding: 5px;
+}
+#calbut {
+  top: 20%;
+  padding: 10px;
+  width: 200px;
+  margin-bottom: 10px;
+  background-color: #b98ff5;
+  color: rgb(0, 0, 0);
+  border: 2px solid #6f35a5;
+  border-radius: 40px;
+  box-shadow: 0px 0px 2px 2px #b98ff5;
+  margin-left: 100px;
+  margin-top: 20px;
+  font-size: large;
+}
+#calbut :hover {
+  cursor: pointer;
+}
+#delebut {
+  top: 20%;
+  padding: 10px;
+  width: 200px;
+  margin-bottom: 10px;
+  background-color: #b98ff5;
+  color: rgb(0, 0, 0);
+  border: 2px solid #6f35a5;
+  border-radius: 40px;
+  box-shadow: 0px 0px 2px 2px #b98ff5;
+  margin-left: 100px;
+  margin-top: 20px;
+  font-size: large;
+}
+
+#delebut :hover {
+  cursor: pointer;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type="file"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type="datetime-local"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+input[type="date"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+main div {
+  border-radius: 7px;
+  /* padding: 10px; */
+  /* box-shadow: 2px 5px #6f35a5; */
+  box-shadow: #6f35a5 0px 25px 50px -12px;
+}
+.calform {
+  font-style: italic;
+  padding-top: 20px;
+}
+
+.delform {
+  font-style: italic;
+  padding-top: 20px;
+}
+
+.calform h4 {
+  padding-left: 8px;
+  border-radius: 5px;
+  font-size: x-large;
+  background-color: #965fc9;
+  text-align: center;
+}
+
+.delform h4 {
+  padding-left: 8px;
+  border-radius: 5px;
+  font-size: x-large;
+  background-color: #965fc9;
+  text-align: center;
+}
