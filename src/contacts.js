@@ -222,8 +222,8 @@ function displaycard(userdocd, userdoc) {
   container.appendChild(department);
   container.appendChild(category);
   container.appendChild(roomno);
-  wrapper.appendChild(container);
   container.appendChild(whatsappnumber);
+  wrapper.appendChild(container);
   // console.log(userdoc.data());
   var delet = document.createElement("button");
   delet.className = "delbut";
@@ -256,29 +256,45 @@ const colref = collection(db, "KEC Contacts");
 
 var box = document.getElementsByClassName("box")[0];
 
-try {
-  getDocFromCache(colref).then((snapshot) => {
-    snapshot.docs.forEach((userdoc) => {
-      // console.log(userdoc.data());
-      displaycard(userdoc.data(), userdoc);
-    });
-  });
-} catch (e) {
-  getDocs(colref).then((snapshot) => {
-    snapshot.docs.forEach((userdoc) => {
-      displaycard(userdoc.data(), userdoc);
-    });
-  });
-}
+// try {
+//   getDocFromCache(colref).then((snapshot) => {
+//     snapshot.docs.forEach((userdoc) => {
+//       // console.log(userdoc.data());
+//       displaycard(userdoc.data(), userdoc);
+//     });
+//   });
+// } catch (e) {
+//   getDocs(colref).then((snapshot) => {
+//     snapshot.docs.forEach((userdoc) => {
+//       displaycard(userdoc.data(), userdoc);
+//     });
+//   });
+// }
 // let cate = "Developer";
 
-// const q = query(collection(db, "KEC Contacts"), where("category", "==", cate));
+const q1 = query(collection(db, "KEC Contacts"), where("dept", "==", "cse") , where("category", "==", "Teaching"));
 
-// getDocs(q).then((snapshot) => {
-//   snapshot.docs.forEach((userdoc) => {
-//     displaycard(userdoc.data(), userdoc);
-//   });
-// });
+  getDocs(q1).then((snapshot) => {
+    box.innerHTML ="";
+    snapshot.docs.forEach((userdoc) => {
+      displaycard(userdoc.data(), userdoc);
+    });
+  });
+
+var catbut = document.getElementById("categorybutton");
+catbut.addEventListener("click",(e)=>{
+  e.preventDefault();
+  var cate =document.getElementById("cate").value;
+  const q = query(collection(db, "KEC Contacts"), where("category", "==", cate));
+
+  getDocs(q).then((snapshot) => {
+    box.innerHTML ="";
+    snapshot.docs.forEach((userdoc) => {
+      displaycard(userdoc.data(), userdoc);
+    });
+  });
+})
+
 
 function buttonUp() {
   const input = document.querySelector(".searchbox-input");

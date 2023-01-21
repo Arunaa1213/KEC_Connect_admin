@@ -8,15 +8,10 @@ import {
   getFirestore,
   collection,
   getDocs,
-  addDoc,
-  deleteDoc,
   doc,
   updateDoc,
-  setDoc,
-  getDoc,
   arrayUnion,
   arrayRemove,
-  Timestamp,
   getDocFromCache,
 } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js";
 
@@ -27,7 +22,6 @@ import {
   getDownloadURL,
 } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-storage.js";
 
-const firebaseConfig = {};
 
 initializeApp(firebaseConfig);
 const db = getFirestore();

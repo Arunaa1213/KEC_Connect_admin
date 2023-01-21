@@ -8,13 +8,8 @@ import {
   getFirestore,
   collection,
   getDocs,
-  addDoc,
-  deleteDoc,
   doc,
   updateDoc,
-  setDoc,
-  getDoc,
-  Timestamp,
   arrayUnion,
   arrayRemove,
   getDocFromCache,
@@ -27,7 +22,6 @@ import {
   getDownloadURL,
 } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-storage.js";
 
-const firebaseConfig = {};
 
 initializeApp(firebaseConfig);
 const db = getFirestore();
@@ -146,8 +140,6 @@ function deluser(userdocd) {
 }
 
 function displaycard(userdocd, userdoc) {
-  var wrapper = document.createElement("div");
-  wrapper.className = "card";
 
   userdocd.imgslink.map((e) => {
     var indiv = document.createElement("div");
@@ -156,7 +148,7 @@ function displaycard(userdocd, userdoc) {
     image.className = "aboutimg";
     image.src = e;
     indiv.appendChild(image);
-    wrapper.appendChild(indiv);
+    boxin.appendChild(indiv);
   });
 
   const delbut = document.querySelector(".delbut");
@@ -164,5 +156,4 @@ function displaycard(userdocd, userdoc) {
     e.preventDefault();
     deluser(userdocd);
   });
-  boxin.appendChild(wrapper);
 }

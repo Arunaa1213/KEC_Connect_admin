@@ -96,7 +96,7 @@ aside {
   font-size: large;
   float: left;
   z-index: 1;
-  margin-top: 90px;
+  margin-top: 190px;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -109,7 +109,6 @@ aside a {
 
 .select {
   padding: 30px;
-
   cursor: pointer;
 }
 
@@ -120,35 +119,21 @@ aside :hover {
   background-color: #965fc9;
   box-shadow: 0 0 8px 1px #c07dff;
 }
-/* #boxouter {
-  background-color: white;
-  float: left;
-  width: 100%;
-} */
-#boxouter {
+  
+.boxinside {
   display: grid;
-  grid-template-rows: auto auto auto auto;
-}
-.parent {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap:20px 0px ;
+} 
+
+.aboutimg {
+  width: 100%; 
 }
 
 .indiv {
-  width: 400px;
-  float: left;
-}
-.aboutimg {
-  float: left;
-  width: 300px;
-  height: auto;
-  padding-left: 80px;
-}
-
-.card {
-  row-gap: 10px;
-}
+   width: calc(100% * 0.6);
+    
+} 
 
 .form-popupp {
   display: none;
