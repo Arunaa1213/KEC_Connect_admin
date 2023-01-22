@@ -317,19 +317,21 @@ deptbut.addEventListener("click", (e) => {
     box.innerHTML = "";
     snapshot.docs.forEach((userdoc) => {
       displaycard(userdoc.data(), userdoc);
+      console.log(userdoc.data().username);
     });
   });
-  // var name = document.getElementById("searchBar").value;
-  // const q1 = query(
-  //   collection(db, "KEC Contacts"),
-  //   where("dept", "==", dep),
-  //   orderBy("index")
-  // );
-  // getDocs(q1).then((snapshot) => {
-  //   box.innerHTML = "";
-  //   snapshot.docs.forEach((userdoc) => {
-  //     displaycard(userdoc.data(), userdoc);
-  //   });
+  var name = document.getElementById("searchBar").value;
+  // const q1 = query(collection(db, "KEC Contacts"),);
+  getDocs(colref).then((snapshot) => {
+    box.innerHTML = "";
+    snapshot.docs.forEach((userdoc) => {
+      var res = userdoc.data().username.toLowerCase().includes(name);
+      console.log(res);
+      if (userdoc.data().username.toLowerCase().includes(name)) {
+        displaycard(userdoc.data(), userdoc);
+      }
+    });
+  });
 });
 // function buttonUp() {
 //   const input = document.querySelector(".searchbox-input");
