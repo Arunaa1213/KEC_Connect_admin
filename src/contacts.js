@@ -29,7 +29,7 @@ import {
   getDownloadURL,
 } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-storage.js";
 
-const firebaseConfig ={};
+const firebaseConfig = {};
 
 initializeApp(firebaseConfig);
 const db = getFirestore();
@@ -272,58 +272,93 @@ var box = document.getElementsByClassName("box")[0];
 // }
 // let cate = "Developer";
 
-const q1 = query(collection(db, "KEC Contacts"), where("dept", "==", "cse") , where("category", "==", "Teaching"));
+const q1 = query(
+  collection(db, "KEC Contacts"),
+  where("dept", "==", "cse"),
+  where("category", "==", "Teaching")
+  // orderBy("index")
+);
 
-  getDocs(q1).then((snapshot) => {
-    box.innerHTML ="";
-    snapshot.docs.forEach((userdoc) => {
-      displaycard(userdoc.data(), userdoc);
-    });
+getDocs(q1).then((snapshot) => {
+  box.innerHTML = "";
+  snapshot.docs.forEach((userdoc) => {
+    displaycard(userdoc.data(), userdoc);
   });
+});
 
 var catbut = document.getElementById("categorybutton");
-catbut.addEventListener("click",(e)=>{
+catbut.addEventListener("click", (e) => {
   e.preventDefault();
-  var cate =document.getElementById("cate").value;
-  const q = query(collection(db, "KEC Contacts"), where("category", "==", cate));
+  var cate = document.getElementById("cate").value;
+  const q = query(
+    collection(db, "KEC Contacts"),
+    where("category", "==", cate)
+    // orderBy("index")
+  );
 
   getDocs(q).then((snapshot) => {
-    box.innerHTML ="";
+    box.innerHTML = "";
     snapshot.docs.forEach((userdoc) => {
       displaycard(userdoc.data(), userdoc);
     });
   });
-})
-
-
-function buttonUp() {
-  const input = document.querySelector(".searchbox-input");
-  const inputdept = document.querySelector(".searchbox-inputdept");
-  const cards = document.getElementsByClassName("card");
-  let filter = input.value.toLowerCase();
-  let filterdept = "";
-  filterdept = inputdept.value.toLowerCase();
-  for (let i = 0; i < cards.length; i++) {
-    let title = cards[i].querySelector(".username");
-    let dept = cards[i].querySelector(".dept");
-    if (
-      title.innerText.toLowerCase().indexOf(filter) > -1 &&
-      dept.innerText.toLowerCase().indexOf(filterdept) > -1
-    ) {
-      cards[i].classList.remove("d-none");
-    } else {
-      cards[i].classList.add("d-none");
-    }
-  }
-}
-
-var search = document.getElementById("searchdept");
-search.addEventListener("click", (e) => {
-  e.preventDefault();
-  buttonUp();
 });
-var search1 = document.getElementById("searchdept");
-search1.addEventListener("click", (e) => {
+var deptbut = document.getElementById("searchdept");
+deptbut.addEventListener("click", (e) => {
   e.preventDefault();
-  buttonUp();
+  console.log("inside event");
+  var dep = document.getElementById("searchBar1").value;
+  const q = query(
+    collection(db, "KEC Contacts"),
+    where("dept", "==", dep)
+    // orderBy("index")
+  );
+  getDocs(q).then((snapshot) => {
+    box.innerHTML = "";
+    snapshot.docs.forEach((userdoc) => {
+      displaycard(userdoc.data(), userdoc);
+    });
+  });
+  // var name = document.getElementById("searchBar").value;
+  // const q1 = query(
+  //   collection(db, "KEC Contacts"),
+  //   where("dept", "==", dep),
+  //   orderBy("index")
+  // );
+  // getDocs(q1).then((snapshot) => {
+  //   box.innerHTML = "";
+  //   snapshot.docs.forEach((userdoc) => {
+  //     displaycard(userdoc.data(), userdoc);
+  //   });
 });
+// function buttonUp() {
+//   const input = document.querySelector(".searchbox-input");
+//   const inputdept = document.querySelector(".searchbox-inputdept");
+//   const cards = document.getElementsByClassName("card");
+//   let filter = input.value.toLowerCase();
+//   let filterdept = "";
+//   filterdept = inputdept.value.toLowerCase();
+//   for (let i = 0; i < cards.length; i++) {
+//     let title = cards[i].querySelector(".username");
+//     let dept = cards[i].querySelector(".dept");
+//     if (
+//       title.innerText.toLowerCase().indexOf(filter) > -1 &&
+//       dept.innerText.toLowerCase().indexOf(filterdept) > -1
+//     ) {
+//       cards[i].classList.remove("d-none");
+//     } else {
+//       cards[i].classList.add("d-none");
+//     }
+//   }
+// }
+
+// var search = document.getElementById("searchdept");
+// search.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   buttonUp();
+// });
+// var search1 = document.getElementById("searchdept");
+// search1.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   buttonUp();
+// });
