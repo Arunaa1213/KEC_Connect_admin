@@ -78,6 +78,15 @@ function closeFormadd() {
 function closeFormsche() {
   document.getElementById("myFormsche").style.display = "none";
 }
+function closeFormdel1() {
+  document.getElementById("myForm3").style.display = "none";
+}
+
+function openFormdel1() {
+  document.getElementById("myForm3").style.display = "block";
+}
+var closedel2 = document.getElementById("del2close");
+closedel2.addEventListener("click", closeFormdel1);
 var closeedit = document.getElementById("closeedit");
 closeedit.addEventListener("click", closeForm);
 
@@ -229,7 +238,12 @@ function displaycard(userdocd, userdoc) {
   delet.className = "delbut";
   delet.addEventListener("click", (e) => {
     e.preventDefault();
-    deluser(userdoc);
+    openFormdel1();
+    const delbut2 = document.querySelector(".delb2");
+    delbut2.addEventListener("click", (e) => {
+      e.preventDefault();
+      deluser(userdocd);
+    });
   });
   delet.innerHTML = `<i class="fa-solid fa-trash icon"></i>`;
   var edi = document.createElement("button");

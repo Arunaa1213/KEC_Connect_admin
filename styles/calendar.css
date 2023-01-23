@@ -199,3 +199,50 @@ main div {
   background-color: #965fc9;
   text-align: center;
 }
+.form-pop .can2 {
+  top: 50%;
+  align-items: center;
+  padding: 7px;
+  width: 200px;
+  margin-top: 10px;
+  margin-left: 50px;
+  margin-bottom: 5px;
+  background-color: #f88379;
+  color: rgb(0, 0, 0);
+  border: 2px solid #ff0000;
+  border-radius: 40px;
+  box-shadow: 0px 0px 2px 2px #f88379;
+}
+.form-container h4 {
+  margin: 15px;
+}
+.form-pop {
+  display: none;
+  position: fixed;
+  background-color: #ddc1f8;
+  box-shadow: 0px 0px 2px 2px #ddc1f8;
+  border-radius: 15px;
+  top: 37%;
+  right: 36%;
+  border: 3px solid #6f35a5;
+  z-index: 9;
+  align-items: center;
+  width: 300px;
+  height: 170px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+#del2but {
+  top: 50%;
+  align-items: center;
+  padding: 7px;
+  width: 200px;
+  margin-top: 10px;
+  margin-left: 50px;
+  margin-bottom: 5px;
+  background-color: #b98ff5;
+  color: rgb(0, 0, 0);
+  border: 2px solid #6f35a5;
+  border-radius: 40px;
+  box-shadow: 0px 0px 2px 2px #b98ff5;
+}

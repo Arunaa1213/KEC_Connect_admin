@@ -22,7 +22,7 @@ import {
   getDownloadURL,
 } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-storage.js";
 
-
+const firebaseConfig = {};
 initializeApp(firebaseConfig);
 const db = getFirestore();
 
@@ -33,7 +33,15 @@ function openFormadd() {
 function closeForm() {
   document.getElementById("myForm1").style.display = "none";
 }
+function closeFormdel1() {
+  document.getElementById("myForm3").style.display = "none";
+}
 
+function openFormdel1() {
+  document.getElementById("myForm3").style.display = "block";
+}
+var closedel2 = document.getElementById("del2close");
+closedel2.addEventListener("click", closeFormdel1);
 var closeadd = document.getElementById("closeedit");
 closeadd.addEventListener("click", closeForm);
 
@@ -158,7 +166,12 @@ function displaycard(userdocd, userdoc) {
   const delbut = document.querySelector(".delbut");
   delbut.addEventListener("click", (e) => {
     e.preventDefault();
-    deluser(userdocd);
+    openFormdel1();
+    const delbut2 = document.querySelector(".delb2");
+    delbut2.addEventListener("click", (e) => {
+      e.preventDefault();
+      deluser(userdocd);
+    });
   });
   boxin.appendChild(wrapper);
 }

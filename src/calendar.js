@@ -27,10 +27,18 @@ import {
   getDownloadURL,
 } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-storage.js";
 
-const firebaseConfig ={};
+const firebaseConfig = {};
 initializeApp(firebaseConfig);
 const db = getFirestore();
+function closeFormdel1() {
+  document.getElementById("myForm3").style.display = "none";
+}
 
+function openFormdel1() {
+  document.getElementById("myForm3").style.display = "block";
+}
+var closedel2 = document.getElementById("del2close");
+closedel2.addEventListener("click", closeFormdel1);
 const colref3 = collection(db, "Calender events");
 const addcalForm = document.querySelector(".calform");
 addcalForm.addEventListener("submit", (e) => {
@@ -50,16 +58,21 @@ addcalForm.addEventListener("submit", (e) => {
 const delcal = document.querySelector(".delform");
 delcal.addEventListener("submit", (e) => {
   e.preventDefault();
-  var range1 = document.getElementById("range1");
-  range1 = range1.value;
-  var range2 = document.getElementById("range2");
-  range2 = range2.value;
+  openFormdel1();
+  const delbut2 = document.querySelector(".delb2");
+  delbut2.addEventListener("click", (e) => {
+    e.preventDefault();
+    var range1 = document.getElementById("range1");
+    range1 = range1.value;
+    var range2 = document.getElementById("range2");
+    range2 = range2.value;
 
-  getDocs(colref3).then((snapshot) => {
-    snapshot.docs.forEach((userdoc) => {
-      if (userdoc.id >= range1 && userdoc.id <= range2) {
-        deluser(userdoc);
-      }
+    getDocs(colref3).then((snapshot) => {
+      snapshot.docs.forEach((userdoc) => {
+        if (userdoc.id >= range1 && userdoc.id <= range2) {
+          deluser(userdoc);
+        }
+      });
     });
   });
 });

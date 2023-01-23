@@ -151,12 +151,58 @@ aside :hover {
   overflow-y: auto;
   overflow-x: hidden;
 }
-
+.form-pop .can2 {
+  top: 50%;
+  align-items: center;
+  padding: 7px;
+  width: 200px;
+  margin-top: 7px;
+  margin-left: 50px;
+  margin-bottom: 5px;
+  background-color: #f88379;
+  color: rgb(0, 0, 0);
+  border: 2px solid #ff0000;
+  border-radius: 40px;
+  box-shadow: 0px 0px 2px 2px #f88379;
+}
+.form-pop {
+  display: none;
+  position: fixed;
+  background-color: #ddc1f8;
+  box-shadow: 0px 0px 2px 2px #ddc1f8;
+  border-radius: 15px;
+  top: 37%;
+  right: 36%;
+  border: 3px solid #6f35a5;
+  z-index: 9;
+  align-items: center;
+  width: 300px;
+  height: 170px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+#del2but {
+  top: 50%;
+  align-items: center;
+  padding: 7px;
+  width: 200px;
+  margin-top: 7px;
+  margin-left: 50px;
+  margin-bottom: 5px;
+  background-color: #b98ff5;
+  color: rgb(0, 0, 0);
+  border: 2px solid #6f35a5;
+  border-radius: 40px;
+  box-shadow: 0px 0px 2px 2px #b98ff5;
+}
+.form-container h4 {
+  margin: 15px;
+}
 /* Add styles to the form container */
 .form-container {
   max-width: 300px;
   padding: 10px;
-  background-color: white;
+  background-color: #ddc1f8;
 }
 
 /* Full-width input fields */
@@ -310,7 +356,8 @@ aside :hover {
 }
 
 #searchBar,
-#searchBar1,#cate {
+#searchBar1,
+#cate {
   width: fit-content;
   height: auto;
   border-radius: 20px;
@@ -477,7 +524,7 @@ input[type="datetime-local"] {
   box-shadow: 0 8px 8px -4px #c8a0ef;
 }
 
-#categorybutton{
+#categorybutton {
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 5px;

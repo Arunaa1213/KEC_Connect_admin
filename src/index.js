@@ -22,7 +22,7 @@ import {
   getDownloadURL,
 } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-storage.js";
 
-
+const firebaseConfig = {};
 initializeApp(firebaseConfig);
 const db = getFirestore();
 
@@ -33,9 +33,26 @@ function openFormadd() {
 function closeForm() {
   document.getElementById("myForm1").style.display = "none";
 }
+function closeFormdel() {
+  document.getElementById("myForm2").style.display = "none";
+}
 
+function openFormdel() {
+  document.getElementById("myForm3").style.display = "block";
+}
+function closeFormdel1() {
+  document.getElementById("myForm3").style.display = "none";
+}
+
+function openFormdel1() {
+  document.getElementById("myForm3").style.display = "block";
+}
 var closeadd = document.getElementById("closeedit");
 closeadd.addEventListener("click", closeForm);
+var closedel1 = document.getElementById("del1close");
+closedel1.addEventListener("click", closeFormdel);
+var closedel2 = document.getElementById("del2close");
+closedel2.addEventListener("click", closeFormdel1);
 function addnew() {
   openFormadd();
   var urlsche = [];
@@ -140,7 +157,6 @@ function deluser(userdocd) {
 }
 
 function displaycard(userdocd, userdoc) {
-
   userdocd.imgslink.map((e) => {
     var indiv = document.createElement("div");
     indiv.className = "indiv";
@@ -154,6 +170,16 @@ function displaycard(userdocd, userdoc) {
   const delbut = document.querySelector(".delbut");
   delbut.addEventListener("click", (e) => {
     e.preventDefault();
-    deluser(userdocd);
+    openFormdel();
+    const delbut1 = document.querySelector(".delb1");
+    delbut1.addEventListener("click", (e) => {
+      e.preventDefault();
+      openFormdel1();
+      const delbut2 = document.querySelector(".delb2");
+      delbut2.addEventListener("click", (e) => {
+        e.preventDefault();
+        deluser(userdocd);
+      });
+    });
   });
 }

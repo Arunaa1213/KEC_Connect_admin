@@ -119,21 +119,20 @@ aside :hover {
   background-color: #965fc9;
   box-shadow: 0 0 8px 1px #c07dff;
 }
-  
+
 .boxinside {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap:20px 0px ;
-} 
+  gap: 20px 0px;
+}
 
 .aboutimg {
-  width: 100%; 
+  width: 100%;
 }
 
 .indiv {
-   width: calc(100% * 0.6);
-    
-} 
+  width: calc(100% * 0.6);
+}
 
 .form-popupp {
   display: none;
@@ -150,7 +149,23 @@ aside :hover {
   overflow-y: auto;
   overflow-x: hidden;
 }
-
+.form-popup,
+.form-pop {
+  display: none;
+  position: fixed;
+  background-color: #ddc1f8;
+  box-shadow: 0px 0px 2px 2px #ddc1f8;
+  border-radius: 15px;
+  top: 37%;
+  right: 36%;
+  border: 3px solid #6f35a5;
+  z-index: 9;
+  align-items: center;
+  width: 300px;
+  height: 170px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
 .form-popupp .btn {
   top: 50%;
   align-items: center;
@@ -163,6 +178,39 @@ aside :hover {
   border: 2px solid #ff0000;
   border-radius: 40px;
   box-shadow: 0px 0px 2px 2px #f88379;
+}
+.form-popup .can1,
+.form-pop .can2 {
+  top: 50%;
+  align-items: center;
+  padding: 7px;
+  width: 200px;
+  margin-top: 10px;
+  margin-left: 50px;
+  margin-bottom: 5px;
+  background-color: #f88379;
+  color: rgb(0, 0, 0);
+  border: 2px solid #ff0000;
+  border-radius: 40px;
+  box-shadow: 0px 0px 2px 2px #f88379;
+}
+.form-container h4 {
+  margin: 15px;
+}
+#del1but,
+#del2but {
+  top: 50%;
+  align-items: center;
+  padding: 7px;
+  width: 200px;
+  margin-top: 10px;
+  margin-left: 50px;
+  margin-bottom: 5px;
+  background-color: #b98ff5;
+  color: rgb(0, 0, 0);
+  border: 2px solid #6f35a5;
+  border-radius: 40px;
+  box-shadow: 0px 0px 2px 2px #b98ff5;
 }
 #upbut {
   top: 50%;
